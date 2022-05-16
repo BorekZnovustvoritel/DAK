@@ -40,7 +40,8 @@ Má tedy váznam hledat různé statistické odchylky
 \end{itemize}
 
 Shluky chyb jsou takové úseky chybně přenesených prvkům ve kterých relativní četnost chybně přenesených prvků výrazně převyšuje četnost chybných prvků ve zbytku zprávy.
-Počet chybných prvků ve shluku vyjadřujeme pomocí hustoty chyb shluku v \%
+Počet chybných prvků ve shluku vyjadřujeme pomocí hustoty chyb shluku v \%\\
+\textbf{Bitová chybovost} \textit{BER} je počet chyb za sekundu.
 
 \subsection{Co udává kódový poměr a kódový zisk. Co je Shannonův limit}
 Kódový poměr - Poměr informačních bitů ku všem přeneseným (včetně zabezpečovacích)
@@ -84,6 +85,8 @@ Tato minimální hodnota se nazývy Shannonův limit, je uvedena v [dB].
 \end{itemize}
 \subsection{Vysvětlete princip zabezpečení zpráv proti chybám a a jeho vysvětlení}
 Uměle přidáváme další bity ke značkám, které zvětšují Hammingovu vzdálenost těchto značek a díky tomu při chybě jsme schopni určit, kde chyba nastala.
+Zvětšuje se tím počet možných posloupností \textit{L}, z nichž jen malá část
+$L_Z$ je používána. Kódování umožňuje přidělování přijatých posloupností \textit{L} k $L_Z$.
 
 \subsection{Co určuje Plotkinova hranice + vztahy a další kritéria}
 Používá se k určení minimální potřebné délky kódového slova k dosažení požadované korekční či detekční schopnosti kódu. Zabezp. r = n - k

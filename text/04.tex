@@ -32,7 +32,7 @@ Mějme kód definovám předpisem S->X, poté \textbf{KraftMilanovo číslo} spe
     I pří K < 1 nemusí být kód jednoznačně dekódovatelný.
     Z McMilanovy věty vychází
     \begin{itemize}
-        \item K < 1 - kód nemá nadbytečnost a může být jednoznačně identifikován
+        \item K < 1 - kód má nadbytečnost a může být jednoznačně identifikován
         \item K = 1 - jedná s o tzv. kompletní kód a může být jednoznačně identifikován.
         \item K > 1 - kód není jednoznačně dekódovatelný
     \end{itemize}
@@ -62,16 +62,32 @@ Kód je založen na Huffmanově pravidle, které umožňuje navržení optimáln
     \item Kódová slova vytváříme zpětným procházením vytvořeného stromu a zapisováním si 0 a 1.
 \end{enumerate}
 
-\subsection{Vysvětlete princip a důvod použítí kódování bloků dat}
-Může nastat situace, že množina prvů zdrojové abecedy S je menší než množna prvků pomocného zdroje X->q->F, nebo je počet prvků zdrojové abecedy moc malý pro provedení efektivní datové komprese.
-Příkladem může být černobílý obrázek, který je složený ze 2 prvků zdrojové abecedy černého a bílého bodu.
-V takovém případě můžeme využít sloučení více prvků primární abecedy a vytvořit tak novou sadu s vyšším pročem prvků.
+\subsection{Vysvětlete princip a důvod použití kódování bloků dat}
+\begin{enumerate}
+    \item Může nastat situace, že množina prvků zdrojové abecedy S je menší než množina prvků pomocného zdroje 
+    X->q->F, nebo je počet prvků zdrojové abecedy moc malý pro provedení efektivní datové komprese. 
+    Příkladem může být černobílý obrázek, který je složený ze 2 prvků zdrojové abecedy černého a bílého bodu.
+    V takovém případě můžeme využít sloučení více prvků primární abecedy a vytvořit tak novou sadu s vyšším počtem prvků.
+    \item Chceme snižovat redundanci a zvyšovat entropii. Je vhodné kódovat často opakované kódy kratší značkou, 
+    hledáme vhodné kódování.
+\end{enumerate}
 
 \subsection{Vysvětlete princip Aritmetického kódování a porovnejte s Huffmanovým kódem}
 \begin{itemize}
-    \item \textbf{Aritmetické kódování} realizuje návrh značky pro každý symbol primární abecedy individuálně, což umožňuje efektivně modifikovat l´d v případě změny v jejím výskytu.
-    \item V tomto kódování se využívá vyjádření reálného čísla v rozsahu (0,1) v binrním vyjádření ve tvaru
-    $$0.x_1x_2x_3\dots x_n=\frac{x_1}{2}+\frac{x_2}{2^2}+\dots+\frac{x_n}{2_n}$$
+    \item \textbf{Aritmetické kódování} realizuje návrh značky pro každý symbol primární abecedy individuálně, což umožňuje efektivně modifikovat kód v případě změny v jejím výskytu.
+    \item V tomto kódování se využívá vyjádření reálného čísla v rozsahu (0,1) v binárním vyjádření ve tvaru
+    $$0.x_1x_2x_3\dots x_n=\frac{x_1}{2}+\frac{x_2}{2^2}+\dots+\frac{x_n}{2^n}$$
+    \item Např.:
+    $$0.1101010=\frac{1}{2}+\frac{1}{4}+\frac{1}{16}+\frac{1}{64}=\frac{32+16+4+1}{64}=\frac{53}{64}=0,828125$$
+    \item Postup:
+    \begin{enumerate}
+        \item Pro každý prvek spočítáme $a$, kde $a$ je kumulativní pravděpodobnost předchozích prvků.
+        \item  Pro každý prvek i s pravděpodobnost pi určíme n tak, aby bylo nejbližším vyšším celým číslem 
+        splňujícím nerovnost $n \geq 1 - log_2 p_i$.
+        \item Určíme celé číslo c, pro něž platí: $c - 1 \leq 2^n a_i < c $
+        \item $c$ převedeme na kódové slovo
+    \end{enumerate}
+    \includegraphics[width=15.5cm]{images/4_aritmetic.png}
 \end{itemize}
 Narozdíl od huffmanova kódu aritmetické kódování navrhuje značku pro každý symbol primární abecedy individuálně -> v mnoha případech je nebo může být efektivnější než Huffmanovo kódování.
 \subsection{Vysvětlete rozdíl mezi kódováním s dynamickým a statistickým slovníkem. Uveďte příklady kompresních algoritmů a zařaďte je do těchto skupin}
