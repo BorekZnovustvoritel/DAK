@@ -4,12 +4,12 @@
 \begin{itemize}
     \item \textbf{Množství informace} = I
     \begin{itemize}
-        \item Jde o množství informace, které nese  každá jednotlivá zpráva s$_i$
+        \item Jde o množství informace, které nese  každá jednotlivá zpráva S$_i$
         \item Jednotkou je Shannon (Sh)
     \end{itemize}
     \item \textbf{Entropie} 
     \begin{itemize}
-        \item Veličina charakterizující vlastnost zdroje, definuje množství informace nesené jednou zprávou.
+        \item Průměrné množství informace nesené jednou zprávou
     \end{itemize}
     \item \textbf{Entropie zdroje} = H
     \begin{itemize}
@@ -25,10 +25,24 @@
     \item data != informace
 \end{itemize}
 
-\subsection{3.	Vysvětlete pojem základní zdroj zpráv, čím je určen a jaké jsou jeho vlastnosti}
-Jedná se o diskrétní prvek, jelikož k popisu je použit konečný počet charakteristických stavů.
-Je určen množinou zpráv S = {s1,s2,s3.....}, kde každá s1,s2,...sn je generována zdrojem s pravděpodobností p1,p2....pn, přičemž platí, že součet pravděpodobností sum(p1,p2...pn) = 1.
+\subsection{Vysvětlete pojem základní zdroj zpráv, čím je určen a jaké jsou jeho vlastnosti}
+Jedná se o diskrétní prvek, jelikož k popisu je oizžut jibečbž oičet charakteristických prvků.
+Je určen množinou zpráv S = ${S_i}$´, kde každá s$_i$ je generována zdrojem s pravděpodobností p, přičemž platí, že $\sum p_i = 1$.
 Množinu S nazýváme také abeceda zdroje, jednotlivé zprávy jsou symboly.
+Vlastnosti základního zdroje se dělí na statistické a dynamické.
+\item \textbf{Statistické}
+\begin{itemize}
+        \item Množství informace
+        \item Entropie zdroje
+        \item Maximální entropie
+        \item Relativní entropie
+        \item Redundance
+\end{itemize}
+\item \textbf{Dynamické}
+\begin{itemize}
+        \item Informační rychlost základního zdroje
+        \item Modulační rychlost zdroje
+\end{itemize}
 
 \subsection{Co je to nadbytečnost zdroje }
 \textbf{Nadbytečnost} = R.
@@ -37,9 +51,9 @@ R nabývá hodnot 0-1.
 Vhodným kódováním a kompresí se snažíme snížit její hodnotu k 0.
 
 \subsection{Vysvětlete pojem přizpůsobený zdroj zpráv a zdrojové kódovaní}
-Přizpůsobený zdroj se používá se v praxi, kdy je potřeba přizpůsobit základní zdroj pro potřeby přenosu přenosovým kanálem.
-Důvodem je nedostate k signálových stavů základního zdroje. K přízpůsobení zdroje na další přenost je použit pomocný zdroj, který má definován vyhovující počet symbolů. Pomocný zdroj je určen množinou X = ${x_i}$.
-Zdrojové kódování jako přiřazení $s_i => x_i,x_s,x_k$\dots pro každý prvek abecedy X, hovoříme tedy o n-násobně rozšířeném zdroji informace. Zdrojové kódování se dále dělí na rovnoměrné (všechny značky stejné dlouhé, n=konst) a nerovnoměrné (značky jsou různých délek).
+Používá se v praxi, kdy je potřeba přizpůsobit základní zdroj pro potřeby přenosu přenosovým kanálem.
+Důvodem je nedostate k sigálových stavů vzhledem k počtu symbolů základního zdroje. Přízpůsobením zdroje na další přenost je použit pomocný zdroj, který má definován vyhovující počet symbolů. Pomocný zdroj je určen množinou X = ${x_i}$.
+Zdrojové kódování jako přiřazení $s_i => x_i,x_s,x_k$\dots pro každý prvek abecedy X, hovoříme tedy o n-násobně rozšířeném zdroji informace. Zdrojové kódování se dále dělí na rovnoměrné (všechny značky stejné dlouhé, n=konst) a nerovnoměrné (značky jsou různých délek.
 
 \subsection{Vysvětlete pojem účinnost kódování pro rovnoměrné a nerovnoměrné kódování}
 Účinnost kódování je ekvivalentem entropie základního zdroje a je vyšší při použití nerovnoměrného kódování.
@@ -61,7 +75,7 @@ Zdrojové kódování jako přiřazení $s_i => x_i,x_s,x_k$\dots pro každý pr
 \end{itemize}
 
 \subsection{Co je to modulační rychlost? Jakou má jednotku?}
-Jde o dynamickou vlastnost zdroje, která určuje s jakou četností jsou symboly reprezentující zprávy generovány za 1s. Jednotkou je Bód [Bd].
+Modulační rychlost vyjadřuje počet změn prvků za jednotku času. Jednotkou je Bód [Bd].
 
 \subsection{Uveďte popis chování systému pomocí vnějších a pomocí vnitřních stavových veličin}
 \textbf{Vnější}
