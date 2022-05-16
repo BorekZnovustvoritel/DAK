@@ -85,9 +85,17 @@ TCM modulaci?}
 \subsection{Vysvětlete princip vícetónových modulací DMT/OFDM. Nakreslete obrázek realizace.}
 \begin{itemize}
     \item Hledání metod dalšího zefektivnění datového přenosu vedlo k vícetónovým modulačním metodám.
-    \item Můžeme se setkat s \textbf{Diskrétní vícetónovou modulací DMT}, která se uplatňuje zejména na telefonních přípojkách v ADSL a VDSL  
-    \item a \textbf{Ortogonálním kmitočtově děleným multiplexem OFDM}, který se uplatňuje na sdílených médiích v technologiích PLC, WLAN, DVB-T. 
-    \item Výsledkem aplikace IFFT je 2N komplexních hodnot. Ty jsou vstupem IQ modulátoru, který může být realizován s ohledem na cílové kmitočtové pásmo číslicově nebo analogově
+    \item Vstup se dělí do toků, které mají přenosovou rychlost danou počtem bitů na jejich nosných.
+    \item Je to několik QAM modulátorů realizovaných pomocí rychlé Fourierovy transformace rozmístěných na spektru
+    \item Můžeme se setkat s \textbf{Diskrétní vícetónovou modulací DMT}, která se uplatňuje zejména na telefonních
+    přípojkách v ADSL a VDSL, je v základním pásmu, vzniká reálný signál
+    \item a \textbf{Ortogonálním kmitočtově děleným multiplexem OFDM}, který se uplatňuje na sdílených médiích
+    v technologiích PLC, WLAN, DVB-T, je v přeneseném pásmu, vzniká komplexní signál
+    \item  u OFDM jsou komplexní hodnoty vstupem IQ modulátoru, který může být realizován s ohledem na cílové
+    kmitočtové pásmo číslicově nebo analogově
+    \item Doplní se cyklická předpona
+    \item Sériový tok
+    \item D/A převod
 \end{itemize}
 \includegraphics[]{images/11_dmt_odf.png}
     
