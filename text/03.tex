@@ -6,12 +6,12 @@
     \item \textbf{Abecedu} definujeme jako množinu používaných značek.
     \item \textbf{Kód} je soustava dohodnutých pravidel, podle kterých mají být tvořeny, přenášeny a vyhodnocovány značky, odpovídající daným znakům.
     \item \textbf{Prvek značky} je elementární část značky, prvek ze souboru X
-    \item \textbf{Symbol} je interpretace značky nebo její částy v datovém signálu.
+    \item \textbf{Symbol} je interpretace značky nebo její části v datovém signálu.
 \end{itemize}
 
 \subsection{Uveďte rozdíl mezi přenosovým kanálem a okruhem. Vysvětlete pojmy: komutovaný spoj, pevný spoj, simplexní, duplexní, poloduplexní spoj. Metody vytváření duplexního spojení}
 \begin{itemize}
-    \item \textbf{Přenosový kanál} - jde o soubor přenosových prostředků, který není přesně určen jen pro určitý druh přenosu, ale může být použit různými druhy přenosů využíván k  \textbf{jednosměrnůmu přenosu}.
+    \item \textbf{Přenosový kanál} - jde o soubor přenosových prostředků, který není přesně určen jen pro určitý druh přenosu, ale může být použit různými druhy přenosů využíván k  \textbf{jednosměrnému přenosu}.
 
     \item \textbf{Přenosový okruh} - Jde o soubor přenosových prostředků, který není přesně určen jen pro určitý druh přenosu, ale může být použit různými druhy přenosů využíván k \textbf{obousměrnému přenosu}.
     
@@ -19,8 +19,8 @@
     
     \item \textbf{Komutovaný spoj} - jde o spoje, které se vytvoří před vlastním přenosem dat. př: spojení pomocí telefonních modemů nebo GPRS technologie.
     \item \textbf{Pevný spoj} - jde o trvalé spoje. Jejich nevýhoda spočívá ve snižování přenosové a spojovací kapacity systému vzhledem k ostatním uživatelům a proto je jejich realizace finančně náročná.
-    \item \textbf{Simplexní spoje} - umožnují přenos signálu v jednom směru
-    \item \textbf{Duplexní spoje} - umožnují současný přenos signálu v obou směrech
+    \item \textbf{Simplexní spoje} - umožňují přenos signálu v jednom směru
+    \item \textbf{Duplexní spoje} - umožňují současný přenos signálu v obou směrech
     \item \textbf{Poloduplexní spoje} - umožňují duplexní provoz, avšak pouze střídavě v jednom nebo druhém směru.
 \end{itemize}
 Metody realizace duplexního spojení
@@ -30,7 +30,7 @@ Metody realizace duplexního spojení
     \item Obvodové
 \end{itemize}
 
-\subsection{Co jsou to provozní charakteristiky datavoých spojů. Popis nejčastěji užívaných}
+\subsection{Co jsou to provozní charakteristiky datových spojů. Popis nejčastěji užívaných}
 \begin{itemize}
     \item \textbf{Přenosová rychlost} - potřebná rychlost závisí na potřebném objemu přenášených dat.
     Je odlišná na různých úrovních přenosu.
@@ -42,21 +42,26 @@ Metody realizace duplexního spojení
     \begin{itemize}
         \item \textbf{Paralelní způsob přenosu} - Všechny prvky značky se přenášejí ve stejném charakteristickém intervalu, po paralelních kanálech, kterých je stejný počet jako prvů ve značce.
         \item \textbf{Sériový způsob přenosu} - Prvky značky se přenášejí postupně za sebou po jednom kanálu.
-        Tento způsob je náročný na čas poteřbný k přenosu značky.
+        Tento způsob je náročný na čas potřebný k přenosu značky.
                 
     \end{itemize}
-    \item \textbf{ Časový režim přenosu}- V přijímačy je nutno zajistit správné vyhodnocování značek, rozlišit jejich začátky a konec, tedy zajistit synchronizaci.
+    \item \textbf{ Časový režim přenosu}- V přijímači je nutno zajistit správné vyhodnocování značek, rozlišit jejich začátky a konec, tedy zajistit synchronizaci.
     Při sériovém přenosu se nejčastěji setkáme s těmito typy přenosu.
 \end{itemize}
 
-\subsection{Vysvětlete rozdíl mezi rychlostí přenosu a rychlostí přenosu informace}
-\textbf{Přenosová rychlost} je definovaná jako počet dvojkových signálových prvků (bitů) přenesených za 1 s. [bit/s]
+\subsection{Vysvětlete rozdíl mezi rychlostí přenosu $v_p$ a rychlostí přenosu informace $v_i$ v datových přenosech.
+Jaký je rozdíl mezi jednotkami $[bit/s]$ a $[Sh/s]$.}
+\textbf{Přenosová rychlost} je definovaná jako počet dvojkových signálových prvků (bitů) přenesených za 1 s. 
+$v_p=M\cdot \log_2(F)$ $[bit/s]$, $M$ je modulační rychlost, F je počet stavů.
 
-\textbf{Rychlost přenosu informace} - efektivní rychlost (počítají se jen správně přenesené bity nesoucí informaci, ne zabezpečovací)
+\textbf{Rychlost přenosu informace} - informační rychlost (průměrné množství informace za 1 s), $v_i=\frac{H_X}{t_p}$ 
+$[Sh/s]$, $t_p$ je doba výstupu prvku z přizpůsobeného zdroje
+
+$Sh$ se vztahuje k přenesené informaci, tedy k celé zprávě. Bit je prvek značky.
 
 \subsection{Vysvětlete pojmy časového režimu přenosu: synchronní přenos a arytmický. Uveďte příklady}
 \begin{itemize}
-    \item  \textbf{ Synchornní} - značky jsou vysílány kontinuálně a ke změně dochází po konstatním časovém intervalu.
+    \item  \textbf{Synchronní} - značky jsou vysílány kontinuálně a ke změně dochází po konstantním časovém intervalu.
     Není-li potřeba přenášet data přenáší se výplňové značky.
     \item \textbf{Arytmický} - vysílání může být zahájeno v jakémkoli okamžiku. 
     Počátek přenose se označuje specifická kombinace start a stop. Příkladem je rozhraní RS 232.
@@ -64,7 +69,7 @@ Metody realizace duplexního spojení
 \end{itemize}
 
 \subsection{Co je to systém přenosu dat. Jeho základní striktura a význam jednotlivých částí}
-Jde o soubor podrobněji nespecifikovaných zařázení, které slouží k technické realizaci přenosu dat.
+Jde o soubor podrobněji nespecifikovaných zařízení, které slouží k technické realizaci přenosu dat.
 Tvoří jej hardware i software.
 
 \includegraphics[]{images/přenos_dat.png}
@@ -72,15 +77,15 @@ Tvoří jej hardware i software.
 \subsection{Specifikujte  4 základní typy rozhraní, které jsou zpravidla předmětem normalizace. Jaké znáte normalizační organizace}
 \textbf{Typy rozhraní}
 \begin{itemize}
-    \item Mechanické vlastnosti
-    \item Elektrické vlastnosti
-    \item Funkční vlastnosti
-    \item Operační vlastnosti
+    \item Mechanické vlastnosti -  rozměry a tvary dílů, typy konektorů
+    \item Elektrické vlastnosti - úrovně napětí a proudu
+    \item Funkční vlastnosti - význam jednotlivých signálů a jejich časové průběhy, včetně tolerancí
+    \item Operační vlastnosti -  řídící, aplikační, testovací a diagnostické postupy
 \end{itemize}
 \textbf{Normalizační organizace}
 \begin{itemize}
     \item ITU - International Telecommunication Union
-     \item IEFT - Internet Engineering Task Force
+     \item IETF - Internet Engineering Task Force
      \item IEEE - Institute of Electrical and Electronic Engineering
      \item ANSI - American National Standards Institute
      \item ETSI - European Telecommunications Standards Institute
